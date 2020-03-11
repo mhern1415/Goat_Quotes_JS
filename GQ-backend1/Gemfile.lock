@@ -159,7 +159,7 @@ DEPENDENCIES
   rails (~> 6.0.2, >= 6.0.2.1)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
+  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
