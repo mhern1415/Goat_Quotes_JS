@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Quote.destroy_all
+Athlete.destroy_all
+Sport.destroy_all
+
+Sport.create([
+    {name:"Basketball"},
+    {name:"Baseball"},
+    {name:"Hockey"},
+    {name:"Football"},
+    {name:"Soccer"}
+])
