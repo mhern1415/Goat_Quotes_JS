@@ -17,3 +17,47 @@ Sport.create([
     {name:"Football"},
     {name:"Soccer"}
 ])
+
+Athlete.create([
+    {name:"Kobe Bryant"},
+    {name:"Michael Jordan"},
+    {name:"Willie Mays"},
+    {name:"Stephen Curry"},
+    {name:"Wayne Gretzky"},
+    {name:"Tom Brady"},
+    {name:"Cristiano Ronaldo"}
+])
+
+Quote.create([
+    {
+        content:"The most important thing is to try and inspire people so that they can be great in whatever they want to do.",
+        athlete_id:Athlete.find_by(name:"Kobe Bryant").id,
+        sport_id:Sport.find_by(name:"Basketball").id
+    },
+    {
+        content:"Once you know what failure feels like, determination chases success.",
+        athlete_id:Athlete.find_by(name:"Kobe Bryant").id,
+        sport_id:Sport.find_by(name:"Basketball").id
+    },
+    {
+        content:"I can accept failure, but I can't accept not trying.",
+        athlete_id:Athlete.find_by(name:"Michael Jordan").id,
+        sport_id:Sport.find_by(name:"Basketball").id
+    },
+    {
+        content:"I would try and help everybody, because the game was so easy for me. It was just like walking in the park.",
+        athlete_id:Athlete.find_by(name:"Willie Mays").id,
+        sport_id:Sport.find_by(name:"Baseball").id
+    },
+    {
+        content:"You miss 100 percent of the shots you never take.",
+        athlete_id:Athlete.find_by(name:"Wayne Gretzky").id,
+        sport_id:Sport.find_by(name:"Hockey").id
+    },
+    {
+        content:"If you don’t believe in yourself, why is anyone else going to believe in you?",
+        athlete_id:Athlete.find_by(name:"Tom Brady").id,
+        sport_id:Sport.find_by(name:"Football").id
+    }
+
+])
