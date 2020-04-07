@@ -15,7 +15,9 @@ Sport.create([
     {name:"Baseball"},
     {name:"Hockey"},
     {name:"Football"},
-    {name:"Soccer"}
+    {name:"Soccer"},
+    {name:"Other"}
+
 ])
 
 Athlete.create([
@@ -25,7 +27,9 @@ Athlete.create([
     {name:"Stephen Curry"},
     {name:"Wayne Gretzky"},
     {name:"Tom Brady"},
-    {name:"Cristiano Ronaldo"}
+    {name:"Cristiano Ronaldo"},
+    {name:"Muhammad Ali"}
+
 ])
 
 Quote.create([
@@ -58,6 +62,20 @@ Quote.create([
         content:"If you don’t believe in yourself, why is anyone else going to believe in you?",
         athlete_id:Athlete.find_by(name:"Tom Brady").id,
         sport_id:Sport.find_by(name:"Football").id
+    },
+    {
+        content:"He who is not courageous enough to take risks will accomplish nothing in life.",
+        athlete_id:Athlete.find_by(name:"Muhammad Ali").id,
+        sport_id:Sport.find_by(name:"Other").id
+    },
+    {
+        content:"If you think you’re perfect already, then you never will be.",
+        athlete_id:Athlete.find_by(name:"Cristiano Ronaldo").id,
+        sport_id:Sport.find_by(name:"Soccer").id
+    },
+    {
+        content:"Be the best version of yourself in anything you do. You don’t have to live anybody else’s story.",
+        athlete_id:Athlete.find_by(name:"Stephen Curry").id,
+        sport_id:Sport.find_by(name:"Basketball").id
     }
-
 ])
