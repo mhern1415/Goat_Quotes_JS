@@ -1,0 +1,208 @@
+*{
+    box-sizing: border-box; 
+}
+
+h4{
+    font-size: 25px;
+}  
+
+h3{
+    font-size: 20px;
+}  
+
+#description{
+    font-size: 26px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(82, 150, 129); 
+    text-align: center;
+}
+body{
+    padding:0; 
+    margin:0; 
+    height: 100%;
+    width: 100%; 
+    display:flex;
+    justify-content: center; 
+    background-color: rgb(87, 87, 87); 
+    background-image: url("https://img.pixers.pics/pho_wat(s3:700/FO/14/42/34/27/0/700_FO144234270_409b2c274b2460297a81b0ca489809bb.jpg,700,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,650,jpg)/wall-murals-seamless-pattern-sport.jpg.jpg")
+
+}
+
+#quotemodal{
+    position: fixed;
+    right: 20px;
+    left: 50px;
+    top: 50px;
+    bottom: 50px;
+    z-index: 1; 
+    align-items: center; 
+    display: none; 
+    /* use javascript to toggle the above display class on and off */
+}
+
+#modalcontainer{
+    width: 23rem;
+    margin-top: 13%; 
+    margin-left: 35%; 
+    padding: 2%;
+    padding-top: 0;  
+    color: rgb(255, 255, 255);
+    background-color: rgb(199, 0, 0); 
+
+    
+}
+
+#modaltitle{
+    display: flex;
+    flex-direction: row; 
+    width: 103%;
+    padding:0; 
+}
+
+#modaltitle span{
+    margin-left: 33%; 
+    margin-top: 2%; 
+    font-size: 3rem; 
+}
+
+#modaltitle span:hover{
+    cursor: pointer;
+}
+
+#modalform{
+    width:100%; 
+}
+
+#quoteform{
+    margin:0; 
+    width:100%; 
+}
+
+#quoteform button {
+    width:8rem;
+    height:2rem; 
+    margin-left: 32%; 
+}
+
+#quoteform textarea {
+    width: 20rem;
+    height: 3rem; 
+}
+
+#quoteform button:hover{
+    cursor: pointer;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 30px 30px;
+    font-size: 17px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(199, 0, 0);
+}
+  
+.btn.active {
+    background-color: #666;
+    color: white;
+}
+
+#goatMain{
+    position: absolute;
+    text-align: center;
+}
+
+#quotesection{
+     text-align: center;
+ 
+}
+
+#header{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(82, 150, 129);
+    margin: 20px;
+    text-align: center;
+}
+
+#titledescription{
+    position: static;
+    top:0; 
+
+}
+
+#title{
+    text-align: center;
+    width: 90rem;
+    margin-top: 0; 
+    height: 15rem;
+    background-color: rgb(82, 150, 129); 
+    color: white; 
+    font-size: 7rem; 
+    text-align: center; 
+    padding-top: 5%; 
+    border-style: none; 
+    font-family: 'Caveat Brush', cursive;  
+}
+
+.quotediv{
+    display: none;
+    flex-direction: row;
+    align-content: space-around;
+    margin-bottom: 3%; 
+    margin-top: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+
+.show {
+    display: block;
+  }
+
+.quotediv button {
+    width: 8rem;
+    height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    background-color: lightgrey; 
+}
+
+.quotediv button:hover {
+    cursor: pointer; 
+}
+
+.quotebody{
+    display: flex;
+    flex-direction: column; 
+    padding:5%; 
+    width:100%; 
+    background-color: rgba(255, 255, 255, 0.897);
+}
+
+.quotebody p{
+    font-style: italic; 
+    font-size: 25px;
+}
+
+
+
+#addgoatquote{
+    margin-top: 5%; 
+    margin-bottom: 5%; 
+}
+
+#addgoatquote button {
+    height: 5rem;
+    color: rgb(255, 255, 255);
+    font-size: 2rem; 
+    background-color: rgb(199, 0, 0);}
+
+#addgoatquote button:hover{
+    cursor: pointer;    
+}
