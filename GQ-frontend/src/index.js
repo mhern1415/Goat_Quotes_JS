@@ -1,5 +1,5 @@
 const quotesBase = `http://localhost:3000/quotes`
-const sportsURL = `http://localhost:3000/sports`
+const sportsBase = `http://localhost:3000/sports`
 
 
 const addSport = function(sport) {
@@ -15,7 +15,7 @@ const addSports = function(sportsObj) {
 }
 
 const fetchSportsToForm = () => {
-        fetch(sportsURL)
+        fetch(sportsBase)
         .then(resp => resp.json())
         .then(sportsObj => {
                 addSports(sportsObj)
