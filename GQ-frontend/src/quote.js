@@ -24,7 +24,7 @@ class Quote{
             contentDiv.append(quoteArea)
             const athleteDiv = document.createElement(`div`)
             const athleteHeader = document.createElement(`h4`)
-            athleteHeader.innerText = `by ${this.athlete}`
+            athleteHeader.innerText = `GOAT: ${this.athlete}`
             athleteDiv.append(athleteHeader)
             const deleteButton = document.createElement(`button`)
             deleteButton.className = `deletebutton`
