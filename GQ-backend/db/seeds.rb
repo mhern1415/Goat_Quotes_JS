@@ -28,7 +28,14 @@ Athlete.create([
     {name:"Wayne Gretzky"},
     {name:"Tom Brady"},
     {name:"Cristiano Ronaldo"},
-    {name:"Muhammad Ali"}
+    {name:"Muhammad Ali"},
+    {name:"Joe Montana"},
+    {name:"Serena Williams"},
+    {name:"Mia Hamm"},
+    {name:"Lisa Leslie"},
+    {name:"Mario Lemieux"},
+    {name:"Hank Aaron"},
+    {name:"Jackie Robinson"}
 
 ])
 
@@ -77,5 +84,50 @@ Quote.create([
         content:"Be the best version of yourself in anything you do. You don’t have to live anybody else’s story.",
         athlete_id:Athlete.find_by(name:"Stephen Curry").id,
         sport_id:Sport.find_by(name:"Basketball").id
+    },
+    {
+        content:"Winners, I am convinced, imagine their dreams first. They want it with all their heart and expect it to come true. There is, I believe, no other way to live.",
+        athlete_id:Athlete.find_by(name:"Joe Montana").id,
+        sport_id:Sport.find_by(name:"Football").id
+    },
+    {
+        content:"Yeah, it's nice to look up to peaople but the more you try to be somebody else, the less you are of yourself.",
+        athlete_id:Athlete.find_by(name:"Joe Montana").id,
+        sport_id:Sport.find_by(name:"Football").id
+    },
+    {
+        content:"The success of every woman should be the inspiration to another. We should raise each other up. Make sure you’re very courageous: be strong, be extremely kind, and above all be humble.",
+        athlete_id:Athlete.find_by(name:"Serena Williams").id,
+        sport_id:Sport.find_by(name:"Other").id
+    },
+    {
+        content:"True champions aren't always the ones that win, but those with the most guts.",
+        athlete_id:Athlete.find_by(name:"Mia Hamm").id,
+        sport_id:Sport.find_by(name:"Soccer").id
+    },
+    {
+        content:"Everyone talks about age, but it's not about age. It's about work ethic. Winning never gets old.",
+        athlete_id:Athlete.find_by(name:"Lisa Leslie").id,
+        sport_id:Sport.find_by(name:"Basketball").id
+    },
+    {
+        content:"Play without fear and you will be successful.",
+        athlete_id:Athlete.find_by(name:"Mario Lemieux").id,
+        sport_id:Sport.find_by(name:"Hockey").id
+    },
+    {
+        content:"Procrastination is one of the most common and deadliest of diseases and its toll on success and happiness is heavy.",
+        athlete_id:Athlete.find_by(name:"Wayne Gretzky").id,
+        sport_id:Sport.find_by(name:"Hockey").id
+    },
+    {
+        content:"On the field, blacks have been able to be super giants. But, once our playing days are over, this is the end of it and we go back to the back of the bus again.",
+        athlete_id:Athlete.find_by(name:"Hank Aaron").id,
+        sport_id:Sport.find_by(name:"Baseball").id
+    },
+    {
+        content:"The most luxurious possession, the richest treasure anybody has, is his personal dignity.",
+        athlete_id:Athlete.find_by(name:"Jackie Robinson").id,
+        sport_id:Sport.find_by(name:"Baseball").id
     }
 ])
