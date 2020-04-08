@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Goat Quotes</title>
-</head>
-<body>
-   <div class="container">
-       <h1>Goat Quotes</h1>
-   </div> 
-</body>
+<html>
+        <head>
+                <title>Goat Quotes</title>
+                <link rel="stylesheet" type="text/css" href="style.css">
+                <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Caveat+Brush&family=Roboto:ital@1&display=swap" rel="stylesheet">
+        </head>
+        <body>
+ 
+                
+                <div id="goatMain">
+                        <div id="topsection">
+                                <div id="titledescription">
+                                        <div id="title">GOAT Quotes</div>
+                                        <div id="description">GOAT stands for Greatest Of All Time. This is a collection of quotes given by the GOATs of their respective sports.</div>
+                                        <div id="addgoatquote">
+                                                <button id = "quotebutton">Add Goat Quote</button>
+                                        </div>
+                                </div>
+                        </div>
+                        <div id="quotesection">
+                            <div id="header">
+                            <h2>Filter By Sport or Click Show All For All Quotes</h2>
+                            </div>
+                            <div id="myBtnContainer">
+                              <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                              <button class="btn" onclick="filterSelection('Basketball')"> Basketball</button>
+                              <button class="btn" onclick="filterSelection('Baseball')"> Baseball</button>
+                              <button class="btn" onclick="filterSelection('Hockey')"> Hockey</button>
+                              <button class="btn" onclick="filterSelection('Football')"> Football</button>
+                              <button class="btn" onclick="filterSelection('Soccer')"> Soccer</button>
+                              <button class="btn" onclick="filterSelection('Other')"> Other</button>
+
+                            
+                            </div>
+                        </div>
+                        
+                </div>
+                <div id ="quotemodal">
+                        <div id="modalcontainer">
+                                <div id = "modaltitle">
+                                        <h3>           Add a New Goat Quote</h3>
+                                        <span id="close">&#735;</span>
+                                </div>
+                                <div id = "modalform">
+                                        <form id = "quoteform">
+                                                Athlete: <input type = "text" name = "athlete"> <br><br>
+                                                Sport: <select name = "sport" id = "allsports">
+                                                        <option value="blank">Select Sport</option>
+                                                </select> <br><br>
+                                                Quote: <textarea name = "content"></textarea><br><br>
+                                                <button id = "submit">Submit</button>
+                                        </form>
+                                </div>
+                        </div>
+                        
+                      
+                        
+                </div>
+                <script src="./src/index.js"></script>
+                <script src="./src/quote.js"></script>
+                <script src="./src/sport.js"></script>
+                <script src="./src/filter.js"></script>
+                
+        </body>
 </html>
