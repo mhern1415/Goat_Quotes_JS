@@ -35,7 +35,9 @@ Athlete.create([
     {name:"Lisa Leslie"},
     {name:"Mario Lemieux"},
     {name:"Hank Aaron"},
-    {name:"Jackie Robinson"}
+    {name:"Jackie Robinson"},
+    {name:"Babe Ruth"},
+    {name:"Derek Jeter"}
 
 ])
 
@@ -128,6 +130,16 @@ Quote.create([
     {
         content:"The most luxurious possession, the richest treasure anybody has, is his personal dignity.",
         athlete_id:Athlete.find_by(name:"Jackie Robinson").id,
+        sport_id:Sport.find_by(name:"Baseball").id
+    },
+    {
+        content:"You just can't beat the person who never gives up.",
+        athlete_id:Athlete.find_by(name:"Babe Ruth").id,
+        sport_id:Sport.find_by(name:"Baseball").id
+    },
+    {
+        content:"There may be people who have more talent than you, but there's no excuse for anyone to work harder than you do - and I believe that.",
+        athlete_id:Athlete.find_by(name:"Derek Jeter").id,
         sport_id:Sport.find_by(name:"Baseball").id
     }
 ])
