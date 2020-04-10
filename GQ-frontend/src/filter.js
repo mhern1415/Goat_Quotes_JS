@@ -2,7 +2,7 @@
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
-  x = document.getElementsByClassName("quotediv");
+  x = document.getElementsByClassName("sportFilter");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
     RemoveClass(x[i], "show");
