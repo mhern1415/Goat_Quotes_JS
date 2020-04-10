@@ -8,9 +8,9 @@ class Quote{
 
     render(){
             const quotesection = document.getElementById(`quotesection`)
-            const quotediv = document.createElement(`div`)
-            quotediv.dataset.id = this.id 
-            quotediv.className = `quotediv ${this.sport}`
+            const sportFilter = document.createElement(`div`)
+            sportFilter.dataset.id = this.id 
+            sportFilter.className = `sportFilter ${this.sport}`
             const quotebody = document.createElement(`div`)
             quotebody.className = `quotebody`
             const sportDiv = document.createElement(`div`)
@@ -40,8 +40,8 @@ class Quote{
             quotebody.append(sportDiv)
             quotebody.append(contentDiv)
             quotebody.append(deleteButton)
-            quotediv.append(quotebody)
-            quotesection.append(quotediv)
+            sportFilter.append(quotebody)
+            quotesection.append(sportFilter)
     }
 
 
