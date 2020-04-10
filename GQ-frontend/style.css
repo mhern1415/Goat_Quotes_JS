@@ -169,8 +169,8 @@ body{
     height: 2rem;
     margin-left: auto;
     margin-right: auto;
-    color: black;
-    background-color: lightgrey; 
+    color: rgb(255, 255, 255);
+    background-color: rgb(199, 0, 0);
 }
 
 .sportFilter button:hover {
