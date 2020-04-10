@@ -149,7 +149,7 @@ body{
     font-family: 'Caveat Brush', cursive;  
 }
 
-.quotediv{
+.sportFilter{
     display: none;
     flex-direction: row;
     align-content: space-around;
@@ -164,7 +164,7 @@ body{
     display: block;
   }
 
-.quotediv button {
+.sportFilter button {
     width: 8rem;
     height: 2rem;
     margin-left: auto;
@@ -173,7 +173,7 @@ body{
     background-color: lightgrey; 
 }
 
-.quotediv button:hover {
+.sportFilter button:hover {
     cursor: pointer; 
 }
 
