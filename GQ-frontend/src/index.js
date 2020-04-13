@@ -2,7 +2,7 @@ const quotesBase = `http://localhost:3000/quotes`
 const sportsBase = `http://localhost:3000/sports`
 
 
-const addSport = function(sport) {
+const renderSport = function(sport) {
         const newSport = new Sport(sport)
         newSport.render()  
 }
@@ -10,7 +10,7 @@ const addSport = function(sport) {
 
 const addSports = function(sportsObj) {
         sportsObj.forEach((sport) => {
-                addSport(sport)
+                renderSport(sport)
         }) 
 }
 
@@ -35,19 +35,27 @@ const saveQuote = (formInput) => {
         })
 }
 
-const getNewQuote = function(datafromArray) {
-        return {
-                athlete:datafromArray[0].value, 
-                sport:datafromArray[1].value, 
-                content:datafromArray[2].value
-        }
-}
 
 const resetform = function() {
         const QuoteForm = document.getElementById(`quoteform`)
         QuoteForm[0].value = ``
         QuoteForm[1].value = `blank`
         QuoteForm[2].value = ``
+}
+
+const closeForm = function()  {
+        const quotemodal = document.getElementById(`quotemodal`)
+        const background = document.getElementById(`goatMain`)
+        quotemodal.style.display = `none`
+        background.removeAttribute(`style`)
+}
+
+const getNewQuote = function(datafromArray) {
+        return {
+                athlete:datafromArray[0].value, 
+                sport:datafromArray[1].value, 
+                content:datafromArray[2].value
+        }
 }
 
 const submitListener = function()  {
@@ -68,14 +76,6 @@ const submitListener = function()  {
                 }
         })
 }
-
-const closeForm = function()  {
-        const quotemodal = document.getElementById(`quotemodal`)
-        const background = document.getElementById(`goatMain`)
-        quotemodal.style.display = `none`
-        background.removeAttribute(`style`)
-}
-
 
 
 const closeListener = function() {
@@ -136,7 +136,7 @@ const renderAll = function(allquote)  {
         })
         listenerFunc()
 }
-///
+
 const fetchAndLoadAll = () => {
         fetch(quotesBase)
         .then(resp => resp.json())
