@@ -22,6 +22,11 @@ const fetchSportsToForm = () => {
         })
 }
 
+const renderFunc = function(quote) {
+        const newQuote = new Quote(quote)
+        newQuote.render()
+}
+
 const saveQuote = (formInput) => {  
         const goatquote = {
                 method:"POST",
@@ -125,10 +130,7 @@ const listenerFunc = function() {
         submitListener()
 }
 
-const renderFunc = function(quote) {
-        const newQuote = new Quote(quote)
-        newQuote.render()
-}
+
 
 const renderAll = function(allquote)  {
         allquote.forEach((quote) => {
@@ -137,7 +139,7 @@ const renderAll = function(allquote)  {
         listenerFunc()
 }
 
-const fetchAndLoadAll = () => {
+const fetchAndLoadAll = function () {
         fetch(quotesBase)
         .then(resp => resp.json())
         .then(allquote => {
