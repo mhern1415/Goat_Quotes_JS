@@ -2,16 +2,16 @@ const quotesBase = `http://localhost:3000/quotes`
 const sportsBase = `http://localhost:3000/sports`
 
 
-const renderSport = function(sport) {
-        const newSport = new Sport(sport)
-        newSport.render()  
+const quotebuttonListener = function() {
+        const goatButton = document.getElementById(`quotebutton`)
+        goatButton.addEventListener(`click`, () => {
+                openquotemodal()
+        })
 }
 
-
-const addSports = function(sportsObj) {
-        sportsObj.forEach((sport) => {
-                renderSport(sport)
-        }) 
+const openquotemodal = function() { 
+        const quotemodal = document.getElementById(`quotemodal`)
+        quotemodal.style.display = `block`
 }
 
 const fetchSportsToForm = () => {
@@ -22,45 +22,16 @@ const fetchSportsToForm = () => {
         })
 }
 
-const renderFunc = function(quote) {
-        const newQuote = new Quote(quote)
-        newQuote.render()
-}
-
-const saveQuote = (formInput) => {  
-        const goatquote = {
-                method:"POST",
-                headers:{"Content-Type": "application/json"},
-                body:JSON.stringify(formInput)
-        }
-        fetch(quotesBase, goatquote)
-        .then(resp => resp.json())
-        .then(newquote => {
-                renderFunc(newquote)
-        })
+const renderSport = function(sport) {
+        const newSport = new Sport(sport)
+        newSport.render()  
 }
 
 
-const resetform = function() {
-        const QuoteForm = document.getElementById(`quoteform`)
-        QuoteForm[0].value = ``
-        QuoteForm[1].value = `blank`
-        QuoteForm[2].value = ``
-}
-
-const closeForm = function()  {
-        const quotemodal = document.getElementById(`quotemodal`)
-        const background = document.getElementById(`goatMain`)
-        quotemodal.style.display = `none`
-        background.removeAttribute(`style`)
-}
-
-const getNewQuote = function(datafromArray) {
-        return {
-                athlete:datafromArray[0].value, 
-                sport:datafromArray[1].value, 
-                content:datafromArray[2].value
-        }
+const addSports = function(sportsObj) {
+        sportsObj.forEach((sport) => {
+                renderSport(sport)
+        }) 
 }
 
 const submitListener = function()  {
@@ -82,6 +53,43 @@ const submitListener = function()  {
         })
 }
 
+const renderFunc = function(quote) {
+        const newQuote = new Quote(quote)
+        newQuote.render()
+}
+
+const saveQuote = function(formInput) {  
+        const goatquote = {
+                method:"POST",
+                headers:{"Content-Type": "application/json"},
+                body:JSON.stringify(formInput)
+        }
+        fetch(quotesBase, goatquote)
+        .then(resp => resp.json())
+        .then(newquote => {
+                renderFunc(newquote)
+        })
+}
+
+const getNewQuote = function(datafromArray) {
+        return {
+                athlete:datafromArray[0].value, 
+                sport:datafromArray[1].value, 
+                content:datafromArray[2].value
+        }
+}
+
+const resetform = function() {
+        const QuoteForm = document.getElementById(`quoteform`)
+        QuoteForm[0].value = ``
+        QuoteForm[1].value = `blank`
+        QuoteForm[2].value = ``
+}
+
+const closeForm = function()  {
+        const quotemodal = document.getElementById(`quotemodal`)
+        quotemodal.style.display = `none`
+}
 
 const closeListener = function() {
         const closebtn = document.getElementById(`close`)
@@ -91,19 +99,11 @@ const closeListener = function() {
         })
 }
 
-
-const openquotemodal = function() { 
-        const quotemodal = document.getElementById(`quotemodal`)
-        const background = document.getElementById(`goatMain`)
-        quotemodal.style.display = `block`
-        background.style.position = `fixed`
-}
-
-const quotebuttonListener = function() {
-        const goatButton = document.getElementById(`quotebutton`)
-        goatButton.addEventListener(`click`, () => {
-                openquotemodal()
-        })
+const deletegoatquote = function(e)  {
+        const deletedQuote = e.target.parentNode.parentNode
+        const deleteObject = deletedQuote.dataset.id 
+        deletedQuote.remove()
+        deletequote(deleteObject)
 }
 
 const deletequote = function(deleteObject)  {
@@ -115,13 +115,6 @@ const deletequote = function(deleteObject)  {
         .then(goatObj => {
                 alert(goatObj)
         })
-}
-
-const deletegoatquote = function(e)  {
-        const deletedQuote = e.target.parentNode.parentNode
-        const deleteObject = deletedQuote.dataset.id 
-        deletedQuote.remove()
-        deletequote(deleteObject)
 }
 
 const listenerFunc = function() {
@@ -139,10 +132,16 @@ const renderAll = function(allquote)  {
         listenerFunc()
 }
 
+
+
 const fetchAndLoadAll = function () {
         fetch(quotesBase)
         .then(resp => resp.json())
         .then(allquote => {
+                allquote.sort(function (a, b) {
+                      const aName = a.athlete.name
+                      const bName = b.athlete.name
+                return (aName < bName) ? -1 : (aName > bName) ? 1 : 0;                    })
                 renderAll(allquote)
         })
 }
